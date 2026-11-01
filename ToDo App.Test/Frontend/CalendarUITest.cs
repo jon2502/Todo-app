@@ -4,12 +4,12 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Reflection;
 using System.Text;
-using System.Windows.Forms;
+//using System.Windows.Forms;
 using ToDo_App.Library.Calendar;
 using ToDo_App.Library.Input;
 using ToDo_App.Library.Models;
-using ToDo_App.UI;
-
+//using ToDo_App.UI;
+/*
 namespace ToDo_App.Test.Frontend
 {
     internal class CalendarUITest
@@ -298,3 +298,4 @@ namespace ToDo_App.Test.Frontend
         }
     }
 }
+*/

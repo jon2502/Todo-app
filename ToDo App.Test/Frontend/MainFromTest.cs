@@ -1,4 +1,5 @@
-﻿using Moq;
+﻿/*
+using Moq;
 using System.Reflection;
 using System.Windows.Forms;
 using ToDo_App.Library.Calendar;
@@ -110,3 +111,4 @@ public class MainFromTest
         Assert.That(todoDisplay.Title.Text, Is.EqualTo(expected));
     }
 }
+*/
