@@ -147,10 +147,6 @@ public class InputManager : IInputHandling
     {
         return calendar.selectedMonth;
     }
-    public void SetSelectedMonth(DateTime dt)
-    {
-        calendar.selectedMonth = dt;
-    }
     public void NextMonth()
     {
         calendar.ChangeByMonths(1);

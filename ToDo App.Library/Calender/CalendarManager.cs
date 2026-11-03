@@ -13,8 +13,9 @@ namespace ToDo_App.Library.Calendar
     /// </summary>
     public class CalendarManager
     {
-        public DateTime selectedMonth;
-        public string selectedMonthString;
+        //predefined values only exist for testing purposes
+        public DateTime selectedMonth = new DateTime(2026,10,1);
+        public string selectedMonthString = "oktober 2026";
 
 
         /// <summary>

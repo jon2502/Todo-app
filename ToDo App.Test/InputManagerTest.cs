@@ -291,39 +291,29 @@ public class InputManagerTest
     [Test]
     public void SetSelectedMonth_Test()
     {
-        inputManager.InitializeSelectedMonth();
-        inputManager.SetSelectedMonth(new DateTime(2026, 10, 1));
         Assert.AreEqual(inputManager.GetSelectedMonthString(), new DateTime(2026, 10, 1).ToString("MMMM yyyy"));
     }
     [Test]
     public void NextMonth_Test()
     {
-        inputManager.InitializeSelectedMonth();
-        inputManager.SetSelectedMonth(new DateTime(2026, 10, 1));
         inputManager.NextMonth();
         Assert.AreEqual(inputManager.GetSelectedMonthString(), new DateTime(2026, 11, 1).ToString("MMMM yyyy"));
     }
     [Test]
     public void PreviousMonth_Test()
     {
-        inputManager.InitializeSelectedMonth();
-        inputManager.SetSelectedMonth(new DateTime(2026, 10, 1));
         inputManager.PreviousMonth();
         Assert.AreEqual(inputManager.GetSelectedMonthString(), new DateTime(2026, 9, 1).ToString("MMMM yyyy"));
     }
     [Test]
     public void NextYear_Test()
     {
-        inputManager.InitializeSelectedMonth();
-        inputManager.SetSelectedMonth(new DateTime(2026, 10, 1));
         inputManager.NextYear();
         Assert.AreEqual(inputManager.GetSelectedMonthString(), new DateTime(2027, 10, 1).ToString("MMMM yyyy"));
     }
     [Test]
     public void PreviousYear_Test()
     {
-        inputManager.InitializeSelectedMonth();
-        inputManager.SetSelectedMonth(new DateTime(2026, 10, 1));
         inputManager.PreviousYear();
         Assert.AreEqual(inputManager.GetSelectedMonthString(), new DateTime(2025, 10, 1).ToString("MMMM yyyy"));
     }
@@ -339,12 +329,11 @@ public class InputManagerTest
     {
         var toDos = new List<ToDo>
             {
-                CreateToDo(new DateTime(2026, 2, 5), RepeatInterval.None),
-                CreateToDo(new DateTime(2026, 2, 10), RepeatInterval.None),
+                CreateToDo(new DateTime(2026, 10, 5), RepeatInterval.None),
+                CreateToDo(new DateTime(2026, 10, 10), RepeatInterval.None),
                 CreateToDo(new DateTime(2026, 11, 1), RepeatInterval.None)
             };
         dataMock.Setup(x => x.LoadTodoList(out toDos)).Returns(new DataQueryResult(true));
-        inputManager.SetSelectedMonth(new DateTime (2026,2,1));
         int count = 0;
         foreach (var day in inputManager.GetToDosInGivenMonth())
         {
